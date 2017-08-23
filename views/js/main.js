@@ -502,8 +502,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  //Removed document.body.scrollTop from the loop. 
+  var scrollPosition = document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((scrollPosition) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -524,7 +526,8 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  //decreased the initial number of pizzas generated from 200 to 5
+  for (var i = 0; i < 5; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "/dist/views/images/compressed/pizza.png";
