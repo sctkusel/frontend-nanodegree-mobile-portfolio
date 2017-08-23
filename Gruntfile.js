@@ -5,10 +5,10 @@ module.exports = function(grunt) {
     cssmin: {
       css: {
         files: [
-          {'css/style-min.css': ['css/style.css']},
-          {'css/print-min.css': ['css/print.css']},
-          {'views/css/style-min.css': ['views/css/style.css']},
-          {'views/css/bootstrap-grid-min.css': ['views/css/bootstrap-grid.css']},
+          {'dist/css/style-min.css': ['css/style.css']},
+          {'dist/css/print-min.css': ['css/print.css']},
+          {'dist/views/css/style-min.css': ['views/css/style.css']},
+          {'dist/views/css/bootstrap-grid-min.css': ['views/css/bootstrap-grid.css']},
         ],
       },
     },
@@ -20,11 +20,11 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'index-min.html': 'index.html',
-          'project-2048-min.html': 'project-2048.html',
-          'project-mobile-min.html': 'project-mobile.html',
-          'project-webperf-min.html': 'project-webperf.html',
-          'views/pizza-min.html': 'views/pizza.html'
+          'dist/index-min.html': 'index.html',
+          'dist/project-2048-min.html': 'project-2048.html',
+          'dist/project-mobile-min.html': 'project-mobile.html',
+          'dist/project-webperf-min.html': 'project-webperf.html',
+          'dist/views/pizza-min.html': 'views/pizza.html'
         },
       },
     },
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
     uglify: {
       static_mappings: {
         files: [
-          {src: 'js/perfmatters.js', dest: 'js/perfmatters.min.js'},
-          {src: 'views/js/main.js', dest: 'views/js/main-min.js'},
+          {src: 'js/perfmatters.js', dest: 'dist/js/perfmatters.min.js'},
+          {src: 'views/js/main.js', dest: 'dist/views/js/main-min.js'},
         ],
       },
     },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             cwd: 'views/images/',
             src: ['**/*.png'],
             // Could also match cwd line above. i.e. project-directory/img/
-            dest: 'views/images/compressed/',
+            dest: 'dist/views/images/compressed/',
             ext: '.png'
           },
           {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             cwd: 'img/',
             src: ['**/*.png'],
             // Could also match cwd line above. i.e. project-directory/img/
-            dest: 'img/compressed/',
+            dest: 'dist/img/compressed/',
             ext: '.png'
           }
         ]
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
             cwd: 'views/images/',
             src: ['**/*.jpg'],
             // Could also match cwd. i.e. project-directory/img/
-            dest: 'views/images/compressed/',
+            dest: 'dist/views/images/compressed/',
             ext: '.jpg'
           },
           {
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
             cwd: 'img/',
             src: ['**/*.jpg'],
             // Could also match cwd. i.e. project-directory/img/
-            dest: 'img/compressed/',
+            dest: 'dist/img/compressed/',
             ext: '.jpg'
           }
         ]
