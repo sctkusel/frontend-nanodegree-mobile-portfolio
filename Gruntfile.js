@@ -20,7 +20,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'dist/index-min.html': 'index.html',
+          'index.html': 'index-src.html',
           'dist/project-2048-min.html': 'project-2048.html',
           'dist/project-mobile-min.html': 'project-mobile.html',
           'dist/project-webperf-min.html': 'project-webperf.html',
